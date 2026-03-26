@@ -9,7 +9,7 @@ Computer-Based Testing system built with Python and Django
 - Automatic Scoring
 ## Technologies Used 
 - Python
-- Flask
+- Django
 - HTML
 - Sqlite
 ## How to run 
