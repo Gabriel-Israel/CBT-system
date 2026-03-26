@@ -10,7 +10,7 @@ Computer-Based Testing system built with Python and Django
 ## Technologies Used 
 - Python
 - Django
-- HTML
+- HTML/CSS/JavaScript
 - Sqlite
 ## How to run 
 To run the CBT Examination system app visit the link 
