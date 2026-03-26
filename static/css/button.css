@@ -1,0 +1,32 @@
+/* ===== UNIVERSAL BUTTON ===== */
+.u-btn {
+    --bg1: #38bdf8;
+    --bg2: #4ade80;
+    --dark: #0f172a;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 600;
+
+    color: var(--dark);
+    background: linear-gradient(135deg, var(--bg1), var(--bg2));
+    border-radius: 999px;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.u-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(56, 189, 248, 0.35);
+}
+
+.u-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 12px rgba(56, 189, 248, 0.25);
+}

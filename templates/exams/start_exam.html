@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ exam.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/exam.css' %}">
+</head>
+
+<body>
+
+    <div class="start-exam-page">
+
+        <h1 class="exam-title">{{ exam.title }}</h1>
+
+        <!-- TIMER (required by timer.js) -->
+        <div id="exam-duration" data-duration="{{ exam.duration }}"></div>
+        <div class="timer-box">
+            ⏳ Time Left: <span id="timer-display">00:00</span>
+        </div>
+
+        <form id="exam-form" method="post" action="{% url 'submit_exam' exam.id %}">
+            {% csrf_token %}
+
+            {% for question in questions %}
+            <div class="question-card">
+                <h3 class="question-text">{{ forloop.counter }}.{{ question.question_text }}</h3>
+                <div class="options">
+                    <label class="option-label">
+                        <input type="radio" name="question_{{ question.id }}" value="A">
+                        <div class="option-badge">A</div>
+                        <div class="option-text">{{ question.option_a }}</div>
+                    </label>
+
+                    <label class="option-label">
+                        <input type="radio" name="question_{{ question.id }}" value="B">
+                        <div class="option-badge">B</div>
+                        <div class="option-text">{{ question.option_b }}</div>
+                    </label>
+
+                    <label class="option-label">
+                        <input type="radio" name="question_{{ question.id }}" value="C">
+                        <div class="option-badge">C</div>
+                        <div class="option-text">{{ question.option_c }}</div>
+                    </label>
+
+                    <label class="option-label">
+                        <input type="radio" name="question_{{ question.id }}" value="D">
+                        <div class="option-badge">D</div>
+                        <div class="option-text">{{ question.option_d }}</div>
+                    </label>
+                </div>
+            </div>
+            {% endfor %}
+
+
+            <div class="submit-area">
+                <button type="submit" class="uiverse-submit">
+                    <div>
+                        <span>Submit Exam</span>
+                    </div>
+                </button>
+            </div>
+
+        </form>
+
+    </div>;
+
+    <script src="{% static 'js/timer.js' %}"></script>
+    <script src="{% static 'js/exam_confirm.js' %}"></script>
+    <script src="{% static 'js/exam_timer.js' %}"></script>
+
+</body>
+
+</html>

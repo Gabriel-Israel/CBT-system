@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Questions</title>
+
+    <!-- LIVE CSS (we will externalize later) -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .wrapper {
+            max-width: 600px;
+            margin: 80px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            background: #ffe0e0;
+            color: #b30000;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h2>Upload Questions for<br>{{ exam.title }}</h2>
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+        <p style="color: green; font-weight: bold;">
+            {{ message }}
+        </p>
+        {% endfor %}
+        {% endif %}
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label>Select CSV File</label>
+            <input type="file" name="csv_file" accept=".csv" required>
+
+            <button type="submit">Upload Questions</button>
+        </form>
+        <h4>CSV Format Instructions</h4>
+        <p>The CSV file must follow this exact order:</p>
+        <pre>
+question_text,option_a,option_b,option_c,option_d,correct_answer
+</pre>
+        <p><b>Correct answer must be A, B, C, or D.</b></p>
+
+        <div class="back-link">
+            <a href="{% url 'lecturer_dashboard' %}">← Back to Dashboard</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

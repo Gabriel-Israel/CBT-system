@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Result</title>
+    <link rel="stylesheet" href="{% static 'css/exam.css' %}">
+</head>
+
+<body>
+    <div class="result-container">
+        <div class="result-card">
+            <h2>Exam Result</h2>
+
+            <div class="score-circle">
+                <span>{{ result.score }}</span>
+                <small>/ {{ result.total_marks }}</small>
+            </div>
+
+            <p class="percentage">{{ result.percentage|floatformat:0 }}%</p>
+
+            {% if result.percentage >= 50 %}
+            <div class="badge pass">PASS</div>
+            {% else %}
+            <div class="badge fail">FAIL</div>
+            {% endif %}
+
+            <a href="{% url 'exam_list' %}" class="back-btn">Back to Exams</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Login</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+    <div class="top-nav">
+        <a href="{% url 'landing' %}" class="nav-btn">🏠 Home</a>
+    </div>
+    <div class="page-container">
+        <div class="login-card">
+            <p class="login-title">Student Login</p>
+
+            <form method="post" class="login-form">
+                {% csrf_token %}
+                {% if error %}
+                <div
+                    style="background-color:#ffe6eb; color: #a70000; padding: 10px; margin-bottom: 15px; border-radius: 5px;">
+                    {{ error }}
+                </div>
+                {% endif %}
+                <div class="input-group">
+                    <input type="text" name="full_name" required placeholder=" ">
+                    <label>Full Name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" name="matric_number" required placeholder=" ">
+                    <label>Matric Number</label>
+                </div>
+
+                <label>Department</label>
+                <select name="department" required>
+                    <option value="">-- Select Department --</option>
+                    {% for dept in departments %}
+                    <option value="{{ dept.id }}">{{ dept.name }}</option>
+                    {% endfor %}
+                </select>
+
+                <button type="submit" class="login-btn">
+                    Start Exam
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

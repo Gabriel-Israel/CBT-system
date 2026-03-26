@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Available Exams</title>
+    <link rel="stylesheet" href="{% static 'css/exam.css' %}">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <a href="{% url 'landing' %}" class="btn">Home</a>
+        <a href="{% url 'student_login' %}" class="btn"> Logout </a>
+        <div class="exam-list-page">
+            <h1 class="page-title">Available Exams</h1>
+
+            <div class="exam-list">
+                {% for exam in exams %}
+                <div class="exam-card">
+                    <h2>{{ exam.title }}</h2>
+                    <p>Duration: {{ exam.duration }} minutes</p>
+
+                    <a href="{% url 'start_exam' exam.id %}" class="start-btn">
+                        Start Exam
+                    </a>
+                </div>
+                {% empty %}
+                <p>No exams available.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Already Submitted</title>
+    <link rel="stylesheet" href="{% static 'css/exam.css' %}">
+</head>
+
+<body>
+
+    <div class="result-page">
+
+        <div class="result-card">
+            <h1>⚠️ Exam Already Submitted</h1>
+
+            <p class="exam-name">
+                You have already taken this exam.
+            </p>
+
+            <p>
+                Retaking the exam is not allowed.
+            </p>
+
+            <a href="{% url 'exam_list' %}" class="back-btn">
+                Back to Exams
+            </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

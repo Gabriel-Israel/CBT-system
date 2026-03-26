@@ -1,0 +1,104 @@
+/* ===== Landing Page Wrapper ===== */
+.landing-container {
+    min-height: 100vh;
+    padding: 40px 20px;
+    text-align: center;
+
+    /*Background imaage + overly*/
+    background:
+        linear-gradient(rgba(15, 23, 42, 0.65),
+            rgba(15, 23, 42, 0.65)),
+        url("../images/cbt_bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ===== Logo ===== */
+.school-logo img {
+    width: 110px;
+    margin-bottom: 15px;
+}
+
+/* ===== Titles ===== */
+.system-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    font-size: 16px;
+    color: #ffffff;
+    max-width: 720px;
+    margin: 0 auto 10px;
+}
+
+.description-text {
+    font-size: 15px;
+    color: #e5e7eb;
+    max-width: 750px;
+    margin: 0 auto 30px;
+}
+
+/* ===== Access Cards Container ===== */
+.access-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* ===== Individual Card ===== */
+.access-card {
+    background: #00ffff;
+    width: 260px;
+    padding: 25px 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.access-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Card Content ===== */
+.access-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.access-card p {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 18px;
+}
+
+/* ===== Buttons ===== */
+.access-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    text-decoration: none;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.access-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #1e40af, #1d4ed8);
+}
+
+/* ===== Disabled Buttons ===== */
+.access-btn.disabled {
+    background: #2563eb;
+    cursor: not-allowed;
+}

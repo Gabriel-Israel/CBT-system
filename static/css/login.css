@@ -1,0 +1,80 @@
+/* ===== LOGIN CARD ===== */
+.login-card {
+    max-width: 420px;
+    margin: 80px auto;
+    padding: 32px;
+    border-radius: 18px;
+    background: linear-gradient(#18181b, #18181b) padding-box,
+        linear-gradient(120deg, transparent 25%, #38bdf8, #4ade80) border-box;
+    border: 2px solid transparent;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== TITLE ===== */
+.login-title {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* ===== FORM ===== */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* ===== INPUT GROUP ===== */
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 14px;
+    color: #e5e7eb;
+    background: transparent;
+    border: 1px solid #3f3f46;
+    border-radius: 8px;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 13px;
+    pointer-events: none;
+    transition: 0.3s ease;
+    background: #18181b;
+    padding: 0 6px;
+}
+
+.input-group input:focus+label,
+.input-group input:not(:placeholder-shown)+label {
+    top: -8px;
+    font-size: 11px;
+    color: #38bdf8;
+}
+
+/* ===== LOGIN BUTTON ===== */
+.login-btn {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    color: #0f172a;
+    background: linear-gradient(135deg, #38bdf8, #4ade80);
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+}

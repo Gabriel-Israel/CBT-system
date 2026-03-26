@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CBT Examination System</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+</head>
+
+<body>
+
+    <div class="landing-container">
+
+        <!-- Logo -->
+        <div class="school-logo">
+            <img src="{% static 'images/CUSTECH_logo.png' %}" alt="CUSTECH Logo" width="350px" height="159px"
+                aria-busy="true">
+        </div>
+
+        <!-- Title -->
+        <h1 class="system-title">CUSTECH ONLINE CBT System</h1>
+
+        <!-- Welcome Text -->
+        <p class="welcome-text">
+            Welcome to the official Computer-Based Test (CBT) platform of
+            <strong>Confluence University of Science and Technology, Osara (CUSTECH)</strong>
+        </p>
+
+        <!-- Description -->
+        <p class="description-text">
+            This platform enables students to take examinations electronically in a secure,
+            timed, and user-friendly environment. Lecturers and administrators can efficiently
+            manage exams, questions, and results.
+        </p>
+
+        <!-- Access Sections -->
+        <div class="access-cards">
+
+            <!-- Student -->
+            <div class="access-card">
+                <h3>Student</h3>
+                <p>Login to take available exams assigned to your department.</p>
+                <a href="{% url 'student_login' %}" class="access-btn">Student Login</a>
+            </div>
+
+            <!-- Lecturer (disabled for now, safe) -->
+            <div class="access-card">
+                <h3>Lecturer</h3>
+                <p>Create exams, upload questions, and manage assessments.</p>
+                <a href="{% url 'lecturer_login' %}" class="access-btn disabled">Lecturer Login</a>
+            </div>
+
+            <!-- Admin (disabled for now, safe) -->
+            <div class="access-card">
+                <h3>Admin</h3>
+                <p>Manage departments, users, and system-wide CBT operations.</p>
+                <a href="/admin/" class="access-btn disabled">Admin Login </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

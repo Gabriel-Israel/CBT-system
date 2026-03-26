@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Question</title>
+    <link rel="stylesheet" href="{% static 'css/lecturer_add_question.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Add Question for: {{ exam.title }}</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <label>Question</label>
+            <textarea name="question_text" required></textarea>
+
+            <label>Option A</label>
+            <input type="text" name="option_a" required>
+
+            <label>Option B</label>
+            <input type="text" name="option_b" required>
+
+            <label>Option C</label>
+            <input type="text" name="option_c" required>
+
+            <label>Option D</label>
+            <input type="text" name="option_d" required>
+
+            <label>Correct Answer (A / B / C / D)</label>
+            <input type="text" name="correct_answer" maxlength="1" required>
+
+            <label>Marks</label>
+            <input type="number" name="marks" value="1" required>
+
+            <button type="submit">Save Question</button>
+        </form>
+
+        <a href="{% url 'lecturer_dashboard' %}" class="back-link">
+            ← Back to Exams
+        </a>
+
+    </div>
+
+</body>
+
+</html>

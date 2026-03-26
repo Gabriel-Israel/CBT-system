@@ -1,0 +1,46 @@
+/* ===== BASE RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== GLOBAL BODY ===== */
+body {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: radial-gradient(circle at top, #1b1b1f, #0f0f12);
+    color: #e5e7eb;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+/* ===== PAGE WRAPPER ===== */
+.page-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ===== HEADINGS ===== */
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #f9fafb;
+}
+
+/* ===== LINKS ===== */
+a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== BUTTON RESET (we will style later) ===== */
+button {
+    all: unset;
+    cursor: pointer;
+}
