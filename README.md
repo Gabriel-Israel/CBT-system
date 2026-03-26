@@ -13,3 +13,5 @@ Computer-Based Testing system built with Python and Django
 - HTML
 - Sqlite
 ## How to run 
+To run the CBT Examination system app visit the link below
+https://gabrielpro01.pythonanywhere.com
